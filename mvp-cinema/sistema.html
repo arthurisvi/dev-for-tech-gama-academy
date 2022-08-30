@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        textarea,
+        select {
+            display: block;
+        }
+        
+        .managerOptions {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <h1>CineAcademy</h1>
+    <h3>O que você deseja gerenciar?</h3>
+    <div class="managerOptions">
+        <button id="button-movies" onclick="showMoviesContainer()">Filmes</button>
+        <button id="button-rooms">Salas</button>
+        <button id="button-sessions">Sessões</button>
+    </div>
+
+    <div id="container-movies" style="display: none; margin-top: 30px;">
+        <h4>Filmes</h4>
+        <form action="javascript:void(0)" method="POST" onsubmit="createMovie()" id="formMovie">
+            <label>Título</label>
+            <input type="text" required>
+            <label>Sinopse</label>
+            <textarea placeholder="Sinopse" rows="10" required></textarea>
+            <label>Tempo de filme</label>
+            <input type="time" required>
+            <label>Classificação indicativa</label>
+            <input type="number" required>
+            <label>Aúdio</label>
+            <select>
+                <!-- <option disabled selected>Aúdio</option> -->
+                <option>PT-BR</option>
+            </select>
+            <label>Gênero</label>
+            <select>
+                <!-- <option disabled selected>Gênero</option> -->
+                <option>Comédia</option>
+                <option>Terror</option>
+                <option>Ação</option>
+                <option>Suspense</option>
+            </select>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <table>
+            <tr>
+                <th>Nome</th>
+            </tr>
+            <tbody id="movies">
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>
+
+</html>

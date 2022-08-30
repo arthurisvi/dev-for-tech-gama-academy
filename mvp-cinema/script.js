@@ -12,3 +12,7 @@ function login() {
         document.getElementById("loginForm").reset();
     }
 }
+
+function showMoviesContainer() {
+    document.getElementById("container-movies").style.display = "block";
+}
