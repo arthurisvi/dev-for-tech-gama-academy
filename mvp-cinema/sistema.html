@@ -33,37 +33,52 @@
 
     <div id="container-movies" style="display: none; margin-top: 30px;">
         <h4>Filmes</h4>
-        <form action="javascript:void(0)" method="POST" onsubmit="createMovie()" id="formMovie">
+        <form id="form-movie" action="javascript:void(0)" method="POST" onsubmit="postMovie()">
             <label>Título</label>
-            <input type="text" required>
+            <input id="title" type="text" required>
             <label>Sinopse</label>
-            <textarea placeholder="Sinopse" rows="10" required></textarea>
+            <textarea id="synopsis" rows="10" required></textarea>
             <label>Tempo de filme</label>
-            <input type="time" required>
+            <input id="movie-time" type="time" required>
             <label>Classificação indicativa</label>
-            <input type="number" required>
+            <select id="parental-rating">
+                <option>Livre</option>
+                <option>+10</option>
+                <option>+12</option>
+                <option>+14</option>
+                <option>+16</option>
+                <option>+18</option>
+            </select>
             <label>Aúdio</label>
-            <select>
-                <!-- <option disabled selected>Aúdio</option> -->
+            <select id="audio">
                 <option>PT-BR</option>
+                <option>EN</option>
             </select>
             <label>Gênero</label>
-            <select>
-                <!-- <option disabled selected>Gênero</option> -->
+            <select id="genre">
                 <option>Comédia</option>
                 <option>Terror</option>
                 <option>Ação</option>
                 <option>Suspense</option>
             </select>
-            <button type="submit">Cadastrar</button>
+            <button style="margin-top: 30px;" type="submit" id="register-movie">Cadastrar</button>
         </form>
+        <div id="container-button-edit"></div>
+        <br>
         <table>
             <tr>
-                <th>Nome</th>
+                <th>Título</th>
+                <th>Sinopse</th>
+                <th>Tempo de filme</th>
+                <th>Classificação indicativa</th>
+                <th>Aúdio</th>
+                <th>Gênero</th>
+                <th>Ação</th>
             </tr>
             <tbody id="movies">
             </tbody>
         </table>
+        <div id="status"></div>
     </div>
 
 </body>
